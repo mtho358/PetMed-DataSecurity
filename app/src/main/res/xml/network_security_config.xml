@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- By setting the cleartextTrafficPermitted to false,
+     any network requests that do not use TLS will be blocked
+     for the specified domain.
+     The github.io was added as a domain and
+     by setting the includeSubdomains to true, this will enfore
+     TLS to be required for subdomains like kolinsturt.github.io-->
+
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">github.io</domain>
+        <pin-set>
+            <pin digest="SHA-256">xlDAST56PmiT3SR0WdFOR3dghwJrQ8yXx6JLSqTIRpk=</pin>
+            <pin digest="SHA-256">k2v657xBsOVe1PQRwOsHsw3bsGT2VzIqz5K+59sNQws=</pin>
+        </pin-set>
+        <trustkit-config enforcePinning="true" />
+    </domain-config>
+</network-security-config>
